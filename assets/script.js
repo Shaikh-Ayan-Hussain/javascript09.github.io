@@ -29,7 +29,13 @@ function loginIn() {
     let enterconfirmPass = document.getElementById("enterconfirmPass").value;
 
     let Users = user.find(user => user.userId === enterId && user.userPass === enterPass && user.confirmPass === enterconfirmPass)
-    alert("Login Successful");
+    if (userExists) {
+        alert("Login Successful");
+    } else {
+        alert("Incorrect credentials or passwords do not match.");
+    }
+
+
     document.getElementById("enterUser").value = "";
     document.getElementById("enterPass").value = "";
     document.getElementById("enterconfirmPass").value = "";
